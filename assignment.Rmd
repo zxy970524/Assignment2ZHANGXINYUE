@@ -1,0 +1,32 @@
+---
+title: "Assignment2(R markdown)"
+author: "ZhangXinyue"
+date: "9/30/2022"
+output: pdf_document
+---
+
+# The Homework About Air Quality
+
+## Introduction
+This database is about daily air quality measurements in May to September 1973, New York.
+
+## Make a data frame from the air quality dataset
+
+*1.* Select the  **1-20** pieces of this dataset.
+
+
+*2.* **'Data_Frame'** is a data frame which includes rows **1-20** from airquality dataset.
+
+
+## Delete the N/A value of this dataset.
+
+Using code *na.omit(airquality)* to omit the rows which contain N/A in data set **'Data_Frame'**.
+
+```{r}
+Data_Frame<-data.frame(airquality[1:20,])
+print(Data_Frame)
+#######Delete the N/A value
+good<- complete.cases(airquality)
+airquality[good, ][1:20, ]
+
+```
